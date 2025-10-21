@@ -18,11 +18,11 @@ public class Admissions {
     public static double awareScore(Applicant app) {
         double score = blindScore(app);
 
-        if (app.income < 40000) score += 0.05;     // low-income boost
+        if (app.income < 40000) score += 0.10;     // low-income boost
         if (app.firstGen) score += 0.05;           // first-generation bonus
-        if (app.disability) score += 0.03;         // accessibility consideration
-        if (app.legacy) score += 0.02;             // legacy advantage
-        if (app.local) score += 0.03;              // local preference
+        if (app.disability) score += 0.05;         // accessibility consideration
+        if (app.legacy) score += 0.10;             // legacy advantage
+        if (app.local) score += 0.05;              // local preference
         return Math.min(score, 1.0);               // cap score at 1.0
     }
 }
